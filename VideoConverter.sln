@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoConverter.Master", "VideoConverter.Master\VideoConverter.Master.csproj", "{733E5835-4C10-4AE7-BBA7-307CB736217A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoConverter.Node", "VideoConverter.Node\VideoConverter.Node.csproj", "{6E97BCAF-3325-45BB-8BDD-E423B2A3C1F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoConverter.Common", "VideoConverter.Common\VideoConverter.Common.csproj", "{E6462B9B-9333-468F-BAD7-1D17B7591BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{BC2D8D80-9090-423A-9A0F-B299ABF9DD7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoConverter.Master.Model", "VideoConverter.Master.Model\VideoConverter.Master.Model.csproj", "{38B00F75-72D7-4EBF-865F-DEA98688F27B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoConverter.Node.Model", "VideoConverter.Node.Model\VideoConverter.Node.Model.csproj", "{39144AF5-11C5-4FC1-B14F-3FA58CEFB5C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{733E5835-4C10-4AE7-BBA7-307CB736217A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{733E5835-4C10-4AE7-BBA7-307CB736217A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{733E5835-4C10-4AE7-BBA7-307CB736217A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{733E5835-4C10-4AE7-BBA7-307CB736217A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E97BCAF-3325-45BB-8BDD-E423B2A3C1F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E97BCAF-3325-45BB-8BDD-E423B2A3C1F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E97BCAF-3325-45BB-8BDD-E423B2A3C1F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E97BCAF-3325-45BB-8BDD-E423B2A3C1F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6462B9B-9333-468F-BAD7-1D17B7591BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6462B9B-9333-468F-BAD7-1D17B7591BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6462B9B-9333-468F-BAD7-1D17B7591BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6462B9B-9333-468F-BAD7-1D17B7591BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2D8D80-9090-423A-9A0F-B299ABF9DD7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2D8D80-9090-423A-9A0F-B299ABF9DD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2D8D80-9090-423A-9A0F-B299ABF9DD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2D8D80-9090-423A-9A0F-B299ABF9DD7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B00F75-72D7-4EBF-865F-DEA98688F27B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B00F75-72D7-4EBF-865F-DEA98688F27B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B00F75-72D7-4EBF-865F-DEA98688F27B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B00F75-72D7-4EBF-865F-DEA98688F27B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39144AF5-11C5-4FC1-B14F-3FA58CEFB5C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39144AF5-11C5-4FC1-B14F-3FA58CEFB5C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39144AF5-11C5-4FC1-B14F-3FA58CEFB5C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39144AF5-11C5-4FC1-B14F-3FA58CEFB5C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
