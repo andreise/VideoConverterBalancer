@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using System.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace VideoConverter.Common
@@ -31,13 +31,15 @@ namespace VideoConverter.Common
             }
         }
 
+        private static Encoding SerializationEncoding => Encoding.UTF8;
+
         protected static byte[] SerializeFile(ConverterFileInfo file) =>
             file is null ? null :
-            Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(file));
+            SerializationEncoding.GetBytes(JsonConvert.SerializeObject(file));
 
         protected static ConverterFileInfo DeserializeFile(byte[] body) =>
             body is null ? null :
-            (ConverterFileInfo)JsonConvert.DeserializeObject(Encoding.UTF8.GetString(body), typeof(ConverterFileInfo));
+            (ConverterFileInfo)JsonConvert.DeserializeObject(SerializationEncoding.GetString(body), typeof(ConverterFileInfo));
 
         protected readonly string hostName;
 
