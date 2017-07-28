@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Diagnostics.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,11 +9,8 @@ namespace Common.Linq
     {
         public static void ForEach<TSource>(this IEnumerable<TSource> source, Action<TSource> action)
         {
-            if (source is null)
-                throw new ArgumentNullException(nameof(source));
-
-            if (action is null)
-                throw new ArgumentNullException(nameof(action));
+            Contract.RequiresArgumentNotNull(source, nameof(source));
+            Contract.RequiresArgumentNotNull(action, nameof(action));
 
             foreach (var item in source)
                 action(item);
