@@ -30,7 +30,7 @@ namespace VideoConverter.Node.Model
 
             if (this.converterCommandLineFormat.Length == 0)
             {
-                WriteLine($"Converter command line format is unspecified.");
+                WriteLine("Converter command line format is unspecified.");
                 return;
             }
 
