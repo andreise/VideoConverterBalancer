@@ -16,8 +16,8 @@ namespace VideoConverter.Node.Model
     {
         private readonly string converterCommandLineFormat;
 
-        public VideoConverterNodeApplication(string hostName, string converterCommandLineFormat, string[] args)
-            : base(hostName, args, new string[] { })
+        public VideoConverterNodeApplication(string mqServerHost, string converterCommandLineFormat, string[] args)
+            : base(mqServerHost, args, new string[] { })
         {
             Contract.RequiresArgumentNotNull(converterCommandLineFormat, nameof(converterCommandLineFormat));
 
@@ -41,7 +41,7 @@ namespace VideoConverter.Node.Model
 
             bool isCompleted = false;
 
-            var factory = new ConnectionFactory() { HostName = this.hostName };
+            var factory = new ConnectionFactory() { HostName = this.mqServerHost };
 
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())

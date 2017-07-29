@@ -11,8 +11,8 @@ namespace VideoConverter.Master.Model
 {
     public sealed partial class VideoConverterMasterApplication : VideoConverterApplicationBase
     {
-        public VideoConverterMasterApplication(string hostName, string[] args)
-            : base(hostName, args, ArgKeys.GetAll())
+        public VideoConverterMasterApplication(string mqServerHost, string[] args)
+            : base(mqServerHost, args, ArgKeys.GetAll())
         {
         }
 
@@ -76,7 +76,7 @@ namespace VideoConverter.Master.Model
 
             WriteLine(Invariant($"Total input files count: {converterEngine[ConverterFileStatus.None].Count}"));
 
-            var factory = new ConnectionFactory() { HostName = this.hostName };
+            var factory = new ConnectionFactory() { HostName = this.mqServerHost };
 
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())

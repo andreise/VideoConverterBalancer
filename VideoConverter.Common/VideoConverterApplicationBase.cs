@@ -41,7 +41,7 @@ namespace VideoConverter.Common
             body is null ? null :
             (ConverterFileInfo)JsonConvert.DeserializeObject(SerializationEncoding.GetString(body), typeof(ConverterFileInfo));
 
-        protected readonly string hostName;
+        protected readonly string mqServerHost;
 
         protected virtual IEqualityComparer<string> ArgKeyEqualityComparer => StringComparer.OrdinalIgnoreCase;
 
@@ -61,9 +61,9 @@ namespace VideoConverter.Common
                 this.ArgKeyEqualityComparer);
         }
 
-        public VideoConverterApplicationBase(string hostName, string[] args, string[] argKeys)
+        public VideoConverterApplicationBase(string mqServerHost, string[] args, string[] argKeys)
         {
-            this.hostName = hostName;
+            this.mqServerHost = mqServerHost;
 
             T[] normalizeArray<T>(T[] array) => array ?? new T[] { };
 

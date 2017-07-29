@@ -4,8 +4,8 @@
 
     static class Program
     {
-        static string ReadHostNameSetting() => "localhost";
+        static string ReadMQServerHostSetting() => "localhost";
 
-        static void Main(string[] args) => new VideoConverterMasterApplication(ReadHostNameSetting(), args).RunAsync().Wait();
+        static void Main(string[] args) => new VideoConverterMasterApplication(ReadMQServerHostSetting(), args).RunAsync().Wait();
     }
 }
