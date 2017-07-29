@@ -81,24 +81,7 @@ namespace VideoConverter.Master.Model
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.ExchangeDeclare(
-                    exchange: MQConsts.Exchanges.VideoConverterDefault,
-                    type: MQConsts.ExchangeTypes.Fanout,
-                    durable: false,
-                    autoDelete: false,
-                    arguments: null);
-
-                void DeclareQueue(string queueName) => channel.QueueDeclare(
-                    queueName,
-                    durable: false,
-                    exclusive: false,
-                    autoDelete: false,
-                    arguments: null);
-
-                DeclareQueue(MQConsts.Queues.IsCompleted);
-                DeclareQueue(MQConsts.Queues.FreeFiles);
-                DeclareQueue(MQConsts.Queues.FilesProcessedSuccessfully);
-                DeclareQueue(MQConsts.Queues.FilesFailed);
+                new MQHelper(channel).DeclareDefaults();
 
                 var consumer = new EventingBasicConsumer(channel);
 
