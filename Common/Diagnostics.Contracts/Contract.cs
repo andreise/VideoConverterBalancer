@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
+using static System.Diagnostics.Contracts.Contract;
 
 namespace Common.Diagnostics.Contracts
 {
@@ -8,42 +10,64 @@ namespace Common.Diagnostics.Contracts
         {
             if (!condition)
                 throw new TException();
+
+            EndContractBlock();
         }
 
         public static void Requires<TException>(bool condition, Func<TException> exceptionFactory) where TException : Exception, new()
         {
             if (!condition)
                 throw exceptionFactory?.Invoke() ?? new TException();
+
+            EndContractBlock();
         }
 
+        [ContractInvariantMethod]
         public static void Invariant(bool condition, string message = null)
         {
             RequiresInternal(condition, GetInvalidOperationExceptionFactory(message));
+
+            EndContractBlock();
         }
 
+        [ContractArgumentValidator]
         public static void RequiresArgument(bool condition, string message = null, string paramName = null)
         {
             RequiresInternal(condition, GetArgumentExceptionFactory(message, paramName));
+
+            EndContractBlock();
         }
 
+        [ContractArgumentValidator]
         public static void RequiresArgumentRange(bool condition, string paramName, object actualValue, string message)
         {
             RequiresInternal(condition, () => new ArgumentOutOfRangeException(paramName, actualValue, message));
+
+            EndContractBlock();
         }
 
+        [ContractArgumentValidator]
         public static void RequiresArgumentRange(bool condition, string paramName = null, string message = null)
         {
             RequiresInternal(condition, GetArgumentOutOfRangeExceptionFactory(paramName, message));
+
+            EndContractBlock();
         }
 
+        [ContractArgumentValidator]
         public static void RequiresArgumentNotNull<T>(T value, string paramName = null, string message = null) where T : class
         {
             RequiresInternal(!(value is null), GetArgumentNullExceptionFactory(paramName, message));
+
+            EndContractBlock();
         }
 
+        [ContractArgumentValidator]
         public static void RequiresArgumentNotNull<T>(T? value, string paramName = null, string message = null) where T : struct
         {
             RequiresInternal(!(value is null), GetArgumentNullExceptionFactory(paramName, message));
+
+            EndContractBlock();
         }
 
         private static void RequiresInternal(bool condition, Func<Exception> exceptionFactory)
