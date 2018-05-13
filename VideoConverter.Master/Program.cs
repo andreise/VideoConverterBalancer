@@ -8,9 +8,7 @@ namespace VideoConverter.Master
     {
         static string ReadMQServerHostSetting() => "localhost";
 
-        static async Task MainAsync(string[] args) =>
+        static async Task Main(string[] args) =>
             await new VideoConverterMasterApplication(ReadMQServerHostSetting(), args).RunAsync();
-
-        static void Main(string[] args) => MainAsync(args).GetAwaiter().GetResult();
     }
 }

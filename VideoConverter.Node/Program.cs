@@ -10,13 +10,11 @@ namespace VideoConverter.Node
 
         static string ReadConverterCommandLineFormatSetting() => "ffmpeg -i {0} {1}.avi";
 
-        static async Task MainAsync(string[] args) =>
+        static async Task Main(string[] args) =>
             await new VideoConverterNodeApplication(
                 ReadMQServerHostSetting(),
                 ReadConverterCommandLineFormatSetting(),
                 args)
             .RunAsync();
-
-        static void Main(string[] args) => MainAsync(args).GetAwaiter().GetResult();
     }
 }
